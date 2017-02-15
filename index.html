@@ -89,11 +89,11 @@ em {
 }
 
 .video-cover {
-  position: absolute;
-  /*top: 20px;*/
-  width: 100%;
-  z-index: 10000;
- cursor: pointer;
+	position: absolute;
+	/*top: 20px;*/
+	width: 100%;
+	z-index: 10000;
+	cursor: pointer;
 }
 
 .video-container {
@@ -114,17 +114,16 @@ em {
 	/*left: 0;*/
 }
 
-
 #namebutton {
 	z-index: 100000;
 }
 
 .eerstedeel {
 	width: 100%;
-background: #be1f34;
-color: white !important;
-padding-top: 60px;
-padding-bottom: 60px;
+	background: #be1f34;
+	color: white !important;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 </style>
@@ -148,40 +147,35 @@ padding-bottom: 60px;
 </video>
 </div>
 
-
-
 <script type="text/javascript">
 
-		var playCover = document.getElementById('video-play');
-		var nameButton = document.getElementById('namebutton');
-		var nameButtonSwitcher = document.getElementById('namebutton-switcher');
+var playCover = document.getElementById('video-play');
+var nameButton = document.getElementById('namebutton');
+var nameButtonSwitcher = document.getElementById('namebutton-switcher');
 
-		var videos = [
-			document.getElementById('one'),
-			document.getElementById('two')
-		];
-		var audio_index = 1;
-		var volume_levels = [1.0, 1.0];
-		var playing = false;
-		var seeking_index = -1;
-		var is_resizing = false;
-		var time_controlling_index = 0;
+var videos = [
+	document.getElementById('one'),
+	document.getElementById('two')
+];
+var audio_index = 1;
+var volume_levels = [1.0, 1.0];
+var playing = false;
+var seeking_index = -1;
+var is_resizing = false;
+var time_controlling_index = 0;
 
-		
-		function updateAudioLevels() {
-			//need to adjust volume level because Chrome <= 7.0 doesn't respect muted
-			for (var i = 0; i < videos.length; i++) {
-				if (i !== audio_index) {
-					videos[i].muted = true;
-					videos[i].volume = 0.0;
-				} else {
-					videos[i].muted = false;
-					videos[i].volume = volume_levels[i];
-				}
-			}			
+function updateAudioLevels() {
+	//need to adjust volume level because Chrome <= 7.0 doesn't respect muted
+	for (var i = 0; i < videos.length; i++) {
+		if (i !== audio_index) {
+			videos[i].muted = true;
+			videos[i].volume = 0.0;
+		} else {
+			videos[i].muted = false;
+			videos[i].volume = volume_levels[i];
 		}
-
-
+	}			
+}
 
 		console.log(videos[1])
 
@@ -204,14 +198,7 @@ padding-bottom: 60px;
 			videos[1].muted = false;
 			videos[0].muted = true;
 			// nameButton.innerHTML = 'Je kijkt nu naar Jeppe (24)';
-
 		}, true)
-		
-
-
-
-
-
 
 
 /* Things start to go a little haywire when you try to seek within a video.  That's why the code gets ugly from here on it.  */
