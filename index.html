@@ -91,16 +91,17 @@ em {
 .video-cover {
   position: absolute;
   /*top: 20px;*/
-  width: 1080px;
+  width: 100%;
   z-index: 10000;
  cursor: pointer;
 }
 
 .video-container {
-	width: 1080px;
+	width: 100%;
 	/*margin: 0 auto;*/
 	position: relative;
 }
+
 #one {
 	position: absolute;
 	/*top: 20px;*/
@@ -138,11 +139,11 @@ padding-bottom: 60px;
 	<div id="namebutton-switcher">Klik hier om naar Frits (65) te kijken</div> -->
 
 <img id="video-play" class="video-cover" src="playbg.jpg" />
-<video preload="auto" autobuffer="true" id="one" width="1080" controls>
+<video preload="auto" autobuffer="true" id="one" width="100%" controls>
 	<source src="https://s3.eu-central-1.amazonaws.com/www.evanzummeren.com/frits.mp4" type="video/mp4"/>
 </video>
 
-<video preload="auto" autobuffer="true" id="two" width="1080" controls>
+<video preload="auto" autobuffer="true" id="two" width="100%" controls>
 	<source src="https://s3.eu-central-1.amazonaws.com/www.evanzummeren.com/jeppe.mp4" type="video/mp4"/>
 </video>
 </div>
@@ -195,14 +196,14 @@ padding-bottom: 60px;
 			videos[1].style.display = 'none';
 			videos[1].muted = true;
 			videos[0].muted = false;
-			nameButton.innerHTML = 'Je kijkt nu naar Frits (65)';
+			// nameButton.innerHTML = 'Je kijkt nu naar Frits (65)';
 		}, true);
 
 		videos[0].addEventListener('click', function(){
 			videos[1].style.display = 'block';
 			videos[1].muted = false;
 			videos[0].muted = true;
-			nameButton.innerHTML = 'Je kijkt nu naar Jeppe (24)';
+			// nameButton.innerHTML = 'Je kijkt nu naar Jeppe (24)';
 
 		}, true)
 		
