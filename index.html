@@ -371,7 +371,7 @@ function updateAudioLevels() {
 					return;
 				}
 			}
-			updateSizes(480);
+			#updateSizes(480);
 			selectAudio(1);
 
 			for (var j = 0; j < videos.length; j++) {
@@ -387,7 +387,7 @@ function updateAudioLevels() {
 		document.addEventListener('mousemove', function(evt) {
 			if(is_resizing) {
 				var pos = evt.clientX - videoContainer.offsetLeft - 8;
-				updateSizes(pos);
+				#updateSizes(pos);
 			}
 		}, true);
 	
