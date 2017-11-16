@@ -81,13 +81,6 @@ em {
 	font-weight: 600;
 }
 
-#one {
-   cursor: url('https://raw.githubusercontent.com/ErikBorra/jongvsoud/lijken/tmp.png'), auto;
-}
-#two {
-   cursor: url('https://raw.githubusercontent.com/ErikBorra/jongvsoud/lijken/ump.png'), auto;
-}
-
 .video-cover {
 	position: absolute;
 	/*top: 20px;*/
@@ -104,12 +97,14 @@ em {
 
 #one {
 	position: absolute;
+    cursor: url('https://raw.githubusercontent.com/ErikBorra/jongvsoud/lijken/tmp.png'), auto;
 	/*top: 20px;*/
 	/*left: 0;*/
 }
 
 #two {
 	position: absolute;
+    cursor: url('https://raw.githubusercontent.com/ErikBorra/jongvsoud/lijken/ump.png'), auto;
 	/*top: 20px;*/
 	/*left: 0;*/
 }
@@ -371,7 +366,7 @@ function updateAudioLevels() {
 					return;
 				}
 			}
-			#updateSizes(480);
+			//updateSizes(480);
 			selectAudio(1);
 
 			for (var j = 0; j < videos.length; j++) {
@@ -387,7 +382,7 @@ function updateAudioLevels() {
 		document.addEventListener('mousemove', function(evt) {
 			if(is_resizing) {
 				var pos = evt.clientX - videoContainer.offsetLeft - 8;
-				#updateSizes(pos);
+				//updateSizes(pos);
 			}
 		}, true);
 	
