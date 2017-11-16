@@ -23,107 +23,107 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 
 
 body {
-	background: #eaeaea;
+    background: #eaeaea;
 }
 
 h1 {
-	font-family: 'Playfair Display', serif;
-	weight: 900i;
-	font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    weight: 900i;
+    font-size: 48px;
 }
 
 p {
-	color: #414652;
-	font-family: 'Source Serif Pro', serif;
-	font-size: 18px;
-	/*font-size: 1.8rem;*/
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-	width: 50%;
-	margin: auto;
+    color: #414652;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 18px;
+    /*font-size: 1.8rem;*/
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    width: 50%;
+    margin: auto;
 }
 
 em {
-	font-weight: 600;
+    font-weight: 600;
 }
 
 #one {
-   cursor: url('Tropenmuseumpijl.png'), auto;
+   cursor: url('tmp.png'), auto;
 }
 #two {
-   cursor: url('Universiteitsmuseumpijl.png'), auto;
+   cursor: url('ump.png'), auto;
 }
 
 .video-cover {
-	position: absolute;
-	/*top: 20px;*/
-	width: 100%;
-	z-index: 10000;
-	cursor: pointer;
+    position: absolute;
+    /*top: 20px;*/
+    width: 100%;
+    z-index: 10000;
+    cursor: pointer;
 }
 
 .video-container {
-	width: 100%;
-	/*margin: 0 auto;*/
-	position: relative;
+    width: 100%;
+    /*margin: 0 auto;*/
+    position: relative;
 }
 
 #one {
-	position: absolute;
-	/*top: 20px;*/
-	/*left: 0;*/
+    position: absolute;
+    /*top: 20px;*/
+    /*left: 0;*/
 }
 
 #two {
-	position: absolute;
-	/*top: 20px;*/
-	/*left: 0;*/
+    position: absolute;
+    /*top: 20px;*/
+    /*left: 0;*/
 }
 
 #namebutton {
-	z-index: 100000;
+    z-index: 100000;
 }
 
 .eerstedeel {
-	width: 100%;
-	background: #eaeaea;
-	color: white !important;
-	padding-top: 60px;
-	padding-bottom: 60px;
+    width: 100%;
+    background: #eaeaea;
+    color: white !important;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 </style>
@@ -135,7 +135,7 @@ em {
 
 <div class="video-container">
 
-<img id="video-play" class="video-cover" src="https://mmop.nl/wp-content/uploads/sites/3/2017/11/schedels3.png" />
+<img id="video-play" class="video-cover" src="https://mmop.nl/wp-content/uploads/sites/3/2017/11/depot.png" />
 <video preload="auto" autobuffer="true" id="one" width="100%" controls>
     <source src="https://mmop.nl/wp-content/uploads/sites/3/2017/11/DepotStil.mp4" type="video/mp4"/>
 </video>
@@ -152,8 +152,8 @@ var nameButton = document.getElementById('namebutton');
 var nameButtonSwitcher = document.getElementById('namebutton-switcher');
 
 var videos = [
-	document.getElementById('one'),
-	document.getElementById('two')
+    document.getElementById('one'),
+    document.getElementById('two')
 ];
 var audio_index = 1;
 var volume_levels = [1.0, 1.0];
@@ -163,253 +163,253 @@ var is_resizing = false;
 var time_controlling_index = 0;
 
 function updateAudioLevels() {
-	//need to adjust volume level because Chrome <= 7.0 doesn't respect muted
-	for (var i = 0; i < videos.length; i++) {
-		if (i !== audio_index) {
-			videos[i].muted = true;
-			videos[i].volume = 0.0;
-		} else {
-			videos[i].muted = false;
-			videos[i].volume = volume_levels[i];
-		}
-	}			
+    //need to adjust volume level because Chrome <= 7.0 doesn't respect muted
+    for (var i = 0; i < videos.length; i++) {
+        if (i !== audio_index) {
+            videos[i].muted = true;
+            videos[i].volume = 0.0;
+        } else {
+            videos[i].muted = false;
+            videos[i].volume = volume_levels[i];
+        }
+    }           
 }
 
-		console.log(videos[1])
+        console.log(videos[1])
 
-		playCover.addEventListener('click', function(){
-			videos[1].play();
-			videos[0].muted = true;
-			playCover.style.display = "none";
-		}, true);
+        playCover.addEventListener('click', function(){
+            videos[1].play();
+            videos[0].muted = true;
+            playCover.style.display = "none";
+        }, true);
 
 // 1 is 
-		videos[1].addEventListener('click', function(){
-			videos[1].style.display = 'none';
-			videos[1].muted = true;
-			videos[0].muted = false;
-			// nameButton.innerHTML = 'Je kijkt nu naar Frits (65)';
-		}, true);
+        videos[1].addEventListener('click', function(){
+            videos[1].style.display = 'none';
+            videos[1].muted = true;
+            videos[0].muted = false;
+            // nameButton.innerHTML = 'Je kijkt nu naar Frits (65)';
+        }, true);
 
-		videos[0].addEventListener('click', function(){
-			videos[1].style.display = 'block';
-			videos[1].muted = false;
-			videos[0].muted = true;
-			// nameButton.innerHTML = 'Je kijkt nu naar Jeppe (24)';
-		}, true)
+        videos[0].addEventListener('click', function(){
+            videos[1].style.display = 'block';
+            videos[1].muted = false;
+            videos[0].muted = true;
+            // nameButton.innerHTML = 'Je kijkt nu naar Jeppe (24)';
+        }, true)
 
 
 /* Things start to go a little haywire when you try to seek within a video.  That's why the code gets ugly from here on it.  */
-		var seeked_counter = 0;
-		function seeking(evt) {
-			if (seeking_index < 0) {
-				pause();
-				for (var i = 0; i < videos.length; i++) {
-					if (videos[i].id === evt.target.id) {
-						seeking_index = i;
-						break;
-					}
-				}
-			}
-		}
+        var seeked_counter = 0;
+        function seeking(evt) {
+            if (seeking_index < 0) {
+                pause();
+                for (var i = 0; i < videos.length; i++) {
+                    if (videos[i].id === evt.target.id) {
+                        seeking_index = i;
+                        break;
+                    }
+                }
+            }
+        }
 
-		function seeked(evt) {
-			if (seeking_index < 0) {
-				return;
-			} else if (videos[seeking_index].id !== evt.target.id) {
-				seeked_counter--;
-			} else {
-				//seeking_index = -1;
-			}
-			if (!seeked_counter) {
-				var target_time = videos[seeking_index].currentTime;
-				for (var i = 0; i < videos.length; i++) {
-					if (videos[i].id != evt.target.id &&
-						seeking_index != i &&
-						videos[i].currentTime != target_time) {
+        function seeked(evt) {
+            if (seeking_index < 0) {
+                return;
+            } else if (videos[seeking_index].id !== evt.target.id) {
+                seeked_counter--;
+            } else {
+                //seeking_index = -1;
+            }
+            if (!seeked_counter) {
+                var target_time = videos[seeking_index].currentTime;
+                for (var i = 0; i < videos.length; i++) {
+                    if (videos[i].id != evt.target.id &&
+                        seeking_index != i &&
+                        videos[i].currentTime != target_time) {
 
-						seeked_counter++;
+                        seeked_counter++;
 
-						videos[i].currentTime = target_time;
-					}
-				}
-				time_controlling_index = seeking_index;
+                        videos[i].currentTime = target_time;
+                    }
+                }
+                time_controlling_index = seeking_index;
 
-				if (!seeked_counter) {
-					seeking_index = -1;
-					if (playing) {
-						play();
-					}
-				}
-			}
-		}
-		
-		function play(evt) {
-			//first find target for setting currentTime
-			//if (seeking_index <0) {
-				playing = true;
-				for (var i = 0; i < videos.length; i++) {
-					if (videos[i].paused && videos[i] != evt.target) {
-						if (Math.abs(videos[i].currentTime - evt.target.currentTime) > 2) {
-							if (evt.target.currentTime <= videos[i].duration) {
-								videos[i].currentTime = evt.target.currentTime;
-							} else {
-								videos[i].currentTime = videos[i].duration;
-							}
-						}
-						videos[i].play();
-					}
-				}
-			//}
-		}
+                if (!seeked_counter) {
+                    seeking_index = -1;
+                    if (playing) {
+                        play();
+                    }
+                }
+            }
+        }
+        
+        function play(evt) {
+            //first find target for setting currentTime
+            //if (seeking_index <0) {
+                playing = true;
+                for (var i = 0; i < videos.length; i++) {
+                    if (videos[i].paused && videos[i] != evt.target) {
+                        if (Math.abs(videos[i].currentTime - evt.target.currentTime) > 2) {
+                            if (evt.target.currentTime <= videos[i].duration) {
+                                videos[i].currentTime = evt.target.currentTime;
+                            } else {
+                                videos[i].currentTime = videos[i].duration;
+                            }
+                        }
+                        videos[i].play();
+                    }
+                }
+            //}
+        }
 
-		function pause(evt) {
-			if (seeking_index < 0) {
-				playing = false;
-				for (var i = 0; i < videos.length; i++) {
-					if (!videos[i].paused && (!evt || videos[i] != evt.target)) {
-						videos[i].pause();
-					}
-				}
-			}
-		}
+        function pause(evt) {
+            if (seeking_index < 0) {
+                playing = false;
+                for (var i = 0; i < videos.length; i++) {
+                    if (!videos[i].paused && (!evt || videos[i] != evt.target)) {
+                        videos[i].pause();
+                    }
+                }
+            }
+        }
 
-		var last_time_update = 0;
-		/* This is disabled for now.  Only causes trouble. */
-		function timeupdate(evt) {
-			var now = Date.now();
-			if (now - last_time_update < 1000) {
-				//don't update the time more than twice within the same half-second
-				return;
-			}
+        var last_time_update = 0;
+        /* This is disabled for now.  Only causes trouble. */
+        function timeupdate(evt) {
+            var now = Date.now();
+            if (now - last_time_update < 1000) {
+                //don't update the time more than twice within the same half-second
+                return;
+            }
 
-			/*	check in every so often to make sure the videos are still in sync */
-			if (videos[time_controlling_index] === evt.target &&
-				seeking_index < 0
-				) {
-				var target_time = videos[time_controlling_index].currentTime;
-				for (var i = 0; i < videos.length; i++) {
-					if (time_controlling_index != i) {
-						var diff =  Math.abs(videos[i].currentTime - target_time);
-						if (diff > 0.5) {
-							seeking_index = time_controlling_index;
+            /*  check in every so often to make sure the videos are still in sync */
+            if (videos[time_controlling_index] === evt.target &&
+                seeking_index < 0
+                ) {
+                var target_time = videos[time_controlling_index].currentTime;
+                for (var i = 0; i < videos.length; i++) {
+                    if (time_controlling_index != i) {
+                        var diff =  Math.abs(videos[i].currentTime - target_time);
+                        if (diff > 0.5) {
+                            seeking_index = time_controlling_index;
 
-							seeked_counter++;
+                            seeked_counter++;
 
-							videos[i].currentTime = target_time;
+                            videos[i].currentTime = target_time;
 
-							last_time_update = now;
-							return;
-						}
-					}
-				}
-			}
-		}
+                            last_time_update = now;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
 
-		function checkTime() {
-			var now = Date.now();
+        function checkTime() {
+            var now = Date.now();
 
-			if (now - last_time_update < 4000) {
-				//don't update the time more than twice within the same half-second
-				return;
-			}
+            if (now - last_time_update < 4000) {
+                //don't update the time more than twice within the same half-second
+                return;
+            }
 
-			var target_time = videos[time_controlling_index].currentTime;
-			for (var i = 0; i < videos.length; i++) {
-				if (audio_index != i &&
-					!videos[i].paused) {
-					var diff =  Math.abs(videos[i].currentTime - target_time);
-					if (diff > 0.3) {
-						seeking_index = audio_index;
+            var target_time = videos[time_controlling_index].currentTime;
+            for (var i = 0; i < videos.length; i++) {
+                if (audio_index != i &&
+                    !videos[i].paused) {
+                    var diff =  Math.abs(videos[i].currentTime - target_time);
+                    if (diff > 0.3) {
+                        seeking_index = audio_index;
 
-						seeked_counter++;
+                        seeked_counter++;
 
-						videos[i].currentTime = target_time;
-						last_time_update = Date.now();
-						//return;
-					} else if (diff > 0.1) {
-						//debug.innerHTML += 'checkTime<br/>&nbsp;&nbsp;diff = ' + diff + '<br/> ';
-					}
-				}
-			}
-			
-		}
-		
-		function dataunavailable(evt) {
-			pause();
-		}
-		
-		function ended(evt) {
-			if (videos[time_controlling_index] === evt.target) {
-				for (var i = 0; i < videos.length; i++) {
-					if (videos[i] !== evt.target &&
-						videos[i].duration > evt.target.duration) {
-						time_controlling_index = i;
-						return;
-					}
-				}
-			}
-		}
-		
-		function volumechange(evt) {
-			for (var i = 0; i < videos.length; i++) {
-				if (videos[i] == evt.target) {
-					if (evt.target.volume > 0.0) {
-						volume_levels[i] = evt.target.volume;
-					}
-					return;
-				}
-			}
-		}
-		
-		/* resizing interface stuff */
+                        videos[i].currentTime = target_time;
+                        last_time_update = Date.now();
+                        //return;
+                    } else if (diff > 0.1) {
+                        //debug.innerHTML += 'checkTime<br/>&nbsp;&nbsp;diff = ' + diff + '<br/> ';
+                    }
+                }
+            }
+            
+        }
+        
+        function dataunavailable(evt) {
+            pause();
+        }
+        
+        function ended(evt) {
+            if (videos[time_controlling_index] === evt.target) {
+                for (var i = 0; i < videos.length; i++) {
+                    if (videos[i] !== evt.target &&
+                        videos[i].duration > evt.target.duration) {
+                        time_controlling_index = i;
+                        return;
+                    }
+                }
+            }
+        }
+        
+        function volumechange(evt) {
+            for (var i = 0; i < videos.length; i++) {
+                if (videos[i] == evt.target) {
+                    if (evt.target.volume > 0.0) {
+                        volume_levels[i] = evt.target.volume;
+                    }
+                    return;
+                }
+            }
+        }
+        
+        /* resizing interface stuff */
 
-		var checkTime_id = 0;
-		function setUpVideos(evt) {
-			for (var j = 0; j < videos.length; j++) {
-				if (videos[j].networkState < 2 && evt.target !== videos[j] && !videos[j].videoHeight) {
-					return;
-				}
-			}
-			updateSizes(480);
-			selectAudio(1);
+        var checkTime_id = 0;
+        function setUpVideos(evt) {
+            for (var j = 0; j < videos.length; j++) {
+                if (videos[j].networkState < 2 && evt.target !== videos[j] && !videos[j].videoHeight) {
+                    return;
+                }
+            }
+            updateSizes(480);
+            selectAudio(1);
 
-			for (var j = 0; j < videos.length; j++) {
-				videos[j].removeEventListener('loadedmetadata',setUpVideos,false);
-			}
-			if (!checkTime_id) {
-				checkTime_id = setInterval(checkTime,1000);
-			}
-		}
-		
-		
+            for (var j = 0; j < videos.length; j++) {
+                videos[j].removeEventListener('loadedmetadata',setUpVideos,false);
+            }
+            if (!checkTime_id) {
+                checkTime_id = setInterval(checkTime,1000);
+            }
+        }
+        
+        
 
-		document.addEventListener('mousemove', function(evt) {
-			if(is_resizing) {
-				var pos = evt.clientX - videoContainer.offsetLeft - 8;
-				updateSizes(pos);
-			}
-		}, true);
-	
-		document.addEventListener('load',setUpVideos, false);
+        document.addEventListener('mousemove', function(evt) {
+            if(is_resizing) {
+                var pos = evt.clientX - videoContainer.offsetLeft - 8;
+                updateSizes(pos);
+            }
+        }, true);
+    
+        document.addEventListener('load',setUpVideos, false);
 
-		/* set up events */
-		for (var i = 0; i < videos.length; i++) {
-			videos[i].load();
+        /* set up events */
+        for (var i = 0; i < videos.length; i++) {
+            videos[i].load();
 
-			volume_levels[i] = videos[i].volume;
-			videos[i].addEventListener('play', play, false);
-			videos[i].addEventListener('pause', pause, false);
-			videos[i].addEventListener('seeking', seeking, true);
-			videos[i].addEventListener('seeked', seeked, true);
-			
-			videos[i].addEventListener('dataunavailable', dataunavailable, true);
-			videos[i].addEventListener('waiting', dataunavailable, true);
-			
-			videos[i].addEventListener('loadedmetadata',setUpVideos, false);
-			//videos[i].addEventListener('timeupdate',timeupdate, false);
-		}
-		
+            volume_levels[i] = videos[i].volume;
+            videos[i].addEventListener('play', play, false);
+            videos[i].addEventListener('pause', pause, false);
+            videos[i].addEventListener('seeking', seeking, true);
+            videos[i].addEventListener('seeked', seeked, true);
+            
+            videos[i].addEventListener('dataunavailable', dataunavailable, true);
+            videos[i].addEventListener('waiting', dataunavailable, true);
+            
+            videos[i].addEventListener('loadedmetadata',setUpVideos, false);
+            //videos[i].addEventListener('timeupdate',timeupdate, false);
+        }
+        
 
 </script>
 
